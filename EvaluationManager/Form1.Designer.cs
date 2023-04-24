@@ -70,6 +70,7 @@
             this.btnPrijava.TabIndex = 4;
             this.btnPrijava.Text = "Prijava";
             this.btnPrijava.UseVisualStyleBackColor = true;
+            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
             // Form1
             // 

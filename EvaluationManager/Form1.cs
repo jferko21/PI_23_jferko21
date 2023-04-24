@@ -13,5 +13,9 @@ namespace EvaluationManager {
         public Form1() {
             InitializeComponent();
         }
+
+        private void btnPrijava_Click(object sender, EventArgs e) {
+
+        }
     }
 }
