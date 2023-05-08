@@ -50,11 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activity.cs" />
+    <Compile Include="ActivityRepository.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEvaluation.Designer.cs">
+      <DependentUpon>FrmEvaluation.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStudents.cs">
       <SubType>Form</SubType>
@@ -70,6 +78,9 @@
     <Compile Include="Teacher.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEvaluation.resx">
+      <DependentUpon>FrmEvaluation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStudents.resx">
       <DependentUpon>FrmStudents.cs</DependentUpon>
