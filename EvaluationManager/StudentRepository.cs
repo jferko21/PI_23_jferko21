@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Dynamic;
-using System.Xml;
 
 namespace EvaluationManager {
     public class StudentRepository {
