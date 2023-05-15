@@ -34,15 +34,6 @@ namespace EvaluationManager {
             reader = DB.GetDataReader($"SELECT * FROM Activities WHERE Id = {id}");
             if (reader.HasRows) {
                 reader.Read();
-                //aktivnost = CreateObject(reader);
-                /*  aktivnost.Id = Convert.ToInt32(reader["Id"].ToString());
-                  aktivnost.Name = reader["Name"].ToString();
-                  aktivnost.Description = reader["Description"].ToString();
-
-                  int.TryParse(reader["MaxPoints"].ToString(), out int maxPoint);
-                  int.TryParse(reader["MaxPointsForGrade"].ToString(), out int minPointsForGrade);
-                  int.TryParse(reader["MaxPoints"].ToString(), out int minPointsForSignature);
-                */
                 aktivnost = CreateObject(reader);
                 reader.Close();
             }
@@ -56,7 +47,7 @@ namespace EvaluationManager {
             SqlDataReader reader;
 
             DB.OpenConnection();
-            reader = DB.GetDataReader("SELECT * FROM Activities");
+            reader = DB.GetDataReader($"SELECT * FROM Activities");
             while (reader.Read()) {
                 Activity activity = CreateObject(reader);
                 activity_list.Add(activity);

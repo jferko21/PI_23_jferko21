@@ -27,16 +27,16 @@ namespace EvaluationManager {
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
-
+            Close();
         }
 
         private void cboActivities_SelectedIndexChanged(object sender, EventArgs e) {
             Activity selectedActivity = cboActivities.SelectedItem
                  as Activity;
             txtActivityDescription.Text = selectedActivity.Description;
-            txtMinForGrade.Text = selectedActivity.MinPointsForGrade.ToString();
+            txtMinForGrade.Text = selectedActivity.MinPointsForGrade.ToString() + "/" + selectedActivity.MaxPoints;
             txtActivityDescription.Text = selectedActivity.Description;
-            txtMinForSignature.Text= selectedActivity.MinPointsForSignature.ToString();
+            txtMinForSignature.Text= selectedActivity.MinPointsForSignature.ToString() + "/" + selectedActivity.MaxPoints;
 
             numPoints.Maximum = 0;
             numPoints.Maximum = selectedActivity.MaxPoints;
@@ -53,7 +53,14 @@ namespace EvaluationManager {
 
         private void PopulateActivities() {
             if (student != null) {
-                cboActivities.DataSource = repo.GetActivities();
+                List<Activity> activities = repo.GetActivities();
+                cboActivities.ValueMember = "Id";
+                cboActivities.DisplayMember = "Name";
+                cboActivities.DataSource = activities;
+                foreach (Activity activity in activities)
+                {
+                    System.Diagnostics.Debug.WriteLine(activity.Name);
+                }
             }
         }
     }
