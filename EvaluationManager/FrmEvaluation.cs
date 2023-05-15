@@ -40,6 +40,17 @@ namespace EvaluationManager {
 
             numPoints.Maximum = 0;
             numPoints.Maximum = selectedActivity.MaxPoints;
+
+            var evaluation = EvaluationRepository.GetEvaluation(student, selectedActivity);
+            if (evaluation != null) {
+                txtTeacher.Text = evaluation.Evaluator.ToString();
+                txtEvaluationate.Text = evaluation.EvaluationDate.ToString();
+                numPoints.Value = evaluation.Points;
+            } else {
+                txtTeacher.Text = Form1.LoggedTeacher.ToString();
+                txtEvaluationate.Text = "-";
+                numPoints.Value = 0;
+            }
         }
 
         private void FrmEvaluation_Load(object sender, EventArgs e) {

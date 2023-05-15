@@ -14,7 +14,7 @@ namespace EvaluationManager {
         public int MinPointsForSignature { get; set; }
 
         public override string ToString() {
-            return null;
+            return Name;
         }
     }
 }

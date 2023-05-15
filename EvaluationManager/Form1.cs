@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,11 @@ using System.Windows.Forms;
 
 namespace EvaluationManager {
     public partial class Form1 : Form {
-        string username = "nastavnik";
-        string password = "test";
+
+        public static Teacher LoggedTeacher {
+            get;
+            set;
+        }
 
         public Form1() {
             InitializeComponent();
@@ -29,9 +33,13 @@ namespace EvaluationManager {
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
-                if (txtKorIme.Text == username && txtLozinka.Text == password)
+                LoggedTeacher = TeacherRepository.GetTeacher(txtKorIme.Text);
+
+                if (LoggedTeacher != null && 
+                       txtKorIme.Text == LoggedTeacher.Username && txtLozinka.Text == LoggedTeacher.Password)
                 {
                     FrmStudents frmStudents = new FrmStudents();
+                    frmStudents.Text = $"{LoggedTeacher.Username}  {LoggedTeacher.LastName}";
                     frmStudents.ShowDialog();
                 }
                 else {
