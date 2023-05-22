@@ -54,6 +54,5 @@ namespace EvaluationManager {
             DB.CloseConnection();
             return student_list;
         }
-
     }
 }

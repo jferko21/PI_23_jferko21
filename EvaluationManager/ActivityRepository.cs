@@ -57,5 +57,20 @@ namespace EvaluationManager {
             DB.CloseConnection();
             return activity_list;
         }
+
+        public static void UpdateActivity(Activity activity, string desc)
+        {
+            string sql = $"UPDATE Activities SET Description = '{desc}' WHERE Id = {activity.Id}";
+
+
+            DB.OpenConnection();
+            try
+            {
+                DB.ExecuteCommand(sql);
+            }
+            catch { 
+            }
+            DB.CloseConnection();
+        }
     }
 }

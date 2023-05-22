@@ -23,7 +23,15 @@ namespace EvaluationManager {
         }
         
         private void btnSave_Click(object sender, EventArgs e) {
+            Activity activity = cboActivities.SelectedItem as Activity;
+            Teacher teacher = Form1.LoggedTeacher;
 
+            int points = (int)numPoints.Value;
+            teacher.PerformEvaluation(student, activity, points);
+            ActivityRepository.UpdateActivity(activity, txtActivityDescription.Text);
+
+
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {

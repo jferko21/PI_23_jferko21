@@ -73,9 +73,9 @@ public static class EvaluationRepository {
         DB.CloseConnection();
     }
 
-    public static void InsertEvaluation(Evaluation evaluation, Teacher teacher,
+    public static void UpdateEvaluation(Evaluation evaluation, Teacher teacher,
     int points) {
-        string sql = $"UPDATE Evaluations SET IdTeachers = {teacher.Id}, Points = {points}), EvaluationDate = GETDATE() WHERE IdActivities = {evaluation.Activity.Id} AND idStudents = {evaluation.Student.Id}";
+        string sql = $"UPDATE Evaluations SET IdTeachers = {teacher.Id}, Points = {points}, EvaluationDate = GETDATE() WHERE IdActivities = {evaluation.Activity.Id} AND IdStudents = {evaluation.Student.Id}";
 
 
         DB.OpenConnection();
