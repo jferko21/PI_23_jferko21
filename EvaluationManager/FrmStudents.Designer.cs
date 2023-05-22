@@ -30,6 +30,7 @@
         {
             this.dgvStudents = new System.Windows.Forms.DataGridView();
             this.btnEvaluate = new System.Windows.Forms.Button();
+            this.bntGenerate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,11 +56,22 @@
             this.btnEvaluate.UseVisualStyleBackColor = true;
             this.btnEvaluate.Click += new System.EventHandler(this.btnEvaluate_Click);
             // 
+            // bntGenerate
+            // 
+            this.bntGenerate.Location = new System.Drawing.Point(13, 457);
+            this.bntGenerate.Name = "bntGenerate";
+            this.bntGenerate.Size = new System.Drawing.Size(75, 23);
+            this.bntGenerate.TabIndex = 2;
+            this.bntGenerate.Text = "Generiraj izvještaj";
+            this.bntGenerate.UseVisualStyleBackColor = true;
+            this.bntGenerate.Click += new System.EventHandler(this.bntGenerate_Click);
+            // 
             // FrmStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 493);
+            this.Controls.Add(this.bntGenerate);
             this.Controls.Add(this.btnEvaluate);
             this.Controls.Add(this.dgvStudents);
             this.Name = "FrmStudents";
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.Button btnEvaluate;
+        private System.Windows.Forms.Button bntGenerate;
     }
 }

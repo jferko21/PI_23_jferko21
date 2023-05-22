@@ -39,5 +39,11 @@ namespace EvaluationManager
                 }
             }
         }
+
+        private void bntGenerate_Click(object sender, EventArgs e) {
+            Form
+                form = new FrmFinalReport();
+            form.ShowDialog();
+        }
     }
 }
